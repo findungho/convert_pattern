@@ -20,7 +20,7 @@ def mapping_pattern(input_str: str, n: int) -> str:
 	if len(input_str) == n:
 		return input_str
 	
-	if len(input_str) <= n:
+	if len(input_str) < n:
 		q, mod = divmod(n, len(input_str))
 		return input_str*q + input_str[:mod]
 	

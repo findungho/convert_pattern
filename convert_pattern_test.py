@@ -43,7 +43,7 @@ class TestConvertPattern(unittest.TestCase):
 		self.assertEqual(res2, "Soft and Soft")
 		self.assertEqual(res3, "Soft, Soft and Tough")
 		
-	def test_incorrect_convert_pattern_incorrect_cases(self):
+	def test_convert_pattern_incorrect_cases(self):
 		"""
 		This function is used to test the convert_pattern function
 		that includes incorrect test cases.
