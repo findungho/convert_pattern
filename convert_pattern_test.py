@@ -8,36 +8,48 @@ from convert_pattern import mapping_pattern, convert_pattern
 
 class TestConvertPattern(unittest.TestCase):
 	"""
-	Our basic test class
+	Basic test class.
 	"""
 	
-	def test_mapping_pattern(self):
+	def test_mapping_pattern_correct_cases(self):
 		"""
-		This function is used to test the mapping_pattern function.
-		Includes correct and incorrect test cases.
+		This function is used to test the mapping_pattern function
+		that includes correct test cases.
 		"""
 		res1 = mapping_pattern("SST", 5)
 		res2 = mapping_pattern("SST", 2)
 		res3 = mapping_pattern("SST", 3)
-		res4 = mapping_pattern("SST", 6)
 		self.assertEqual(res1, "SSTSS")
 		self.assertEqual(res2, "SS")
 		self.assertEqual(res3, "SST")
-		self.assertEqual(res4, "SSTSSTS")
 		
-	def test_convert_pattern(self):
+	def test_mapping_pattern_incorrect_cases(self):
 		"""
-		This function is used to test the convert_pattern function.
-		Includes correct and incorrect test cases.
+		This function is used to test the mapping_pattern function.
+		that includes incorrect test cases.
+		"""
+		res = mapping_pattern("SST", 6)
+		self.assertEqual(res, "SSTSSTS")
+		
+	def test_convert_pattern_correct_cases(self):
+		"""
+		This function is used to test the convert_pattern function
+		that includes correct test cases.
 		"""
 		res1 = convert_pattern("SSTSS")
 		res2 = convert_pattern("SS")
 		res3 = convert_pattern("SST")
-		res4 = convert_pattern("SSTSST")
 		self.assertEqual(res1, "Soft, Soft, Tough, Soft and Soft")
 		self.assertEqual(res2, "Soft and Soft")
 		self.assertEqual(res3, "Soft, Soft and Tough")
-		self.assertEqual(res4, "Soft, Soft, Tough, Soft, Soft and Soft")
+		
+	def test_incorrect_convert_pattern_incorrect_cases(self):
+		"""
+		This function is used to test the convert_pattern function
+		that includes incorrect test cases.
+		"""
+		res = convert_pattern("SSTSST")
+		self.assertEqual(res, "Soft, Soft, Tough, Soft, Soft and Soft")
 		
 		
 if __name__ == '__main__':
