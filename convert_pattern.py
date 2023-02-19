@@ -71,8 +71,10 @@ def main():
 	pattern = args.pattern
 	nums = args.nums
 	
-	for i in nums.split():
-		mapped_pattern = mapping_pattern(pattern, int(i))
+	for n in nums.split():
+		if int(n) <= 0:
+			continue
+		mapped_pattern = mapping_pattern(pattern, int(n))
 		converted_pattern = convert_pattern(mapped_pattern)
 		print(converted_pattern)
 		
